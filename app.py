@@ -1,18 +1,16 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from datetime import datetime
 import os, json
 
-app = Flask(__name__, static_folder='.')
+app = Flask(__name__)
 
-SPREADSHEET_ID = os.environ.get('SPREADSHEET_ID', 'ВСТАВЬТЕ_ID_ТАБЛИЦЫ_СЮДА')
+SPREADSHEET_ID = os.environ.get('SPREADSHEET_ID', '')
 SHEET_NAME = 'Анкеты'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 def get_sheets_service():
-    # В продакшене — из переменной окружения GOOGLE_CREDENTIALS (JSON-строка)
-    # Локально — из файла credentials.json
     creds_json = os.environ.get('GOOGLE_CREDENTIALS')
     if creds_json:
         info = json.loads(creds_json)
@@ -46,13 +44,15 @@ def append_to_sheet(data):
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    html_path = os.path.join(os.path.dirname(__file__), 'index.html')
+    with open(html_path, encoding='utf-8') as f:
+        return f.read()
 
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
     required = ['email', 'name', 'experience', 'telegram', 'goal', 'difficulties', 'readiness', 'how_long']
-    if not all(data.get(f) for f in required):
+    if not all(data.get(field) for field in required):
         return jsonify({'error': 'Missing fields'}), 400
     try:
         append_to_sheet(data)
