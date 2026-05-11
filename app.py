@@ -48,6 +48,12 @@ def index():
     with open(html_path, encoding='utf-8') as f:
         return f.read()
 
+@app.route('/form')
+def form_page():
+    html_path = os.path.join(os.path.dirname(__file__), 'form.html')
+    with open(html_path, encoding='utf-8') as f:
+        return f.read()
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
