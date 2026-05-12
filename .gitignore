@@ -1,7 +1,13 @@
+.next/
+node_modules/
+out/
+.env
+.env.local
+.env.production
 credentials.json
 *.pyc
 __pycache__/
-.env
 nohup.out
 *.log
 .DS_Store
+.vercel
