@@ -33,7 +33,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
       },
       keyframes: {
         shimmer: {

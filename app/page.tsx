@@ -4,7 +4,7 @@ import { ForWhomPain } from '@/components/for-whom-pain';
 import { Solution } from '@/components/solution';
 import { Program } from '@/components/program';
 import { CtaBanner } from '@/components/cta-banner';
-import { Reviews } from '@/components/reviews';
+import { ReviewsCarousel } from '@/components/reviews-carousel';
 import { Pricing } from '@/components/pricing';
 import { FAQ } from '@/components/faq';
 import { SignupForm } from '@/components/signup-form';
@@ -19,7 +19,7 @@ export default function Home() {
       <Solution />
       <Program />
       <CtaBanner />
-      <Reviews />
+      <ReviewsCarousel />
       <Pricing />
       <CtaBanner />
       <FAQ />
