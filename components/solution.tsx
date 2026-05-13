@@ -12,12 +12,12 @@ const results = [
 
 export function Solution() {
   return (
-    <section className="py-20 px-6 bg-dark-2">
+    <section className="py-20 px-6 bg-cream">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div
-            className="rounded-2xl p-10"
-            style={{ background: 'linear-gradient(135deg, #8d7350 0%, #5c3d1a 100%)' }}
+            className="rounded-2xl p-10 text-white"
+            style={{ background: 'linear-gradient(135deg, #E86329 0%, #c44e18 100%)' }}
           >
             <div className="space-y-5 mb-10">
               {[
@@ -25,7 +25,7 @@ export function Solution() {
                 'Я покажу вам понятные принципы, которые помогут вам самим строить аккомпанемент. Вас не будут грузить сложной теорией (ну почти не будут 😎).',
                 'Вы не просто получите список лучших песен. Вы поймете логику, с которой построены большинство песен. Это даст вам свободу играть что угодно.',
               ].map((text, i) => (
-                <p key={i} className="text-white/85 text-base leading-relaxed pl-4 border-l-2 border-white/20">
+                <p key={i} className="text-white/90 text-base leading-relaxed pl-4 border-l-2 border-white/30">
                   {text}
                 </p>
               ))}
@@ -34,9 +34,9 @@ export function Solution() {
             <h3 className="font-display text-2xl text-white text-center mb-6 font-light">
               За 6 недель вы:
             </h3>
-            <ol className="space-y-3 pl-5 list-decimal marker:text-gold">
+            <ol className="space-y-3 pl-5 list-decimal marker:text-white/50">
               {results.map((r) => (
-                <li key={r} className="text-white/80 text-sm leading-relaxed pl-1">
+                <li key={r} className="text-white/85 text-sm leading-relaxed pl-1">
                   {r}
                 </li>
               ))}

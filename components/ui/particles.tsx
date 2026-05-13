@@ -22,15 +22,15 @@ export function Particles({ count = 20 }: { count?: number }) {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-gold"
+          className="absolute rounded-full bg-orange"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-            opacity: 0.25,
+            opacity: 0.2,
           }}
-          animate={{ y: [-15, 15, -15], opacity: [0.15, 0.45, 0.15] }}
+          animate={{ y: [-15, 15, -15], opacity: [0.1, 0.35, 0.1] }}
           transition={{
             duration: p.duration,
             delay: p.delay,

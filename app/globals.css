@@ -8,28 +8,21 @@
   }
 
   body {
-    background-color: #2a1407;
-    color: #fff;
+    background-color: #F0F0EE;
+    color: #151515;
     -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #d2b67e 0%, #e9d9bf 50%, #d2b67e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      #d2b67e 0%,
-      #e9d9bf 25%,
-      #d2b67e 50%,
-      #e9d9bf 75%,
-      #d2b67e 100%
+      #E86329 0%,
+      #F0A07A 25%,
+      #E86329 50%,
+      #F0A07A 75%,
+      #E86329 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;

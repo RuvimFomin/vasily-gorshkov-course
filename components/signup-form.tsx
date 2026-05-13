@@ -6,7 +6,7 @@ import { FadeIn } from './ui/fade-in';
 import { cn } from '@/lib/utils';
 
 const inputClass =
-  'w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-gold/50 transition-colors font-sans';
+  'w-full bg-white border border-dark/12 rounded-xl px-4 py-3.5 text-dark text-sm placeholder:text-dark/30 focus:outline-none focus:border-orange/50 transition-colors font-sans';
 
 const selectClass = cn(inputClass, 'appearance-none cursor-pointer');
 
@@ -37,22 +37,22 @@ export function SignupForm() {
   }
 
   return (
-    <section id="signup" className="py-20 px-6 bg-dark">
+    <section id="signup" className="py-20 px-6 bg-cream-2">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white text-center mb-2">
+          <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-2">
             Записаться на курс
           </h2>
-          <p className="text-center text-white/40 text-sm mb-10">
+          <p className="text-center text-dark/40 text-sm mb-10">
             Заполнившие анкету первыми получат доступ по специальной цене
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           {status === 'success' ? (
-            <div className="bg-gold/10 border border-gold/30 rounded-2xl p-10 text-center">
-              <p className="text-gold font-display text-3xl font-light mb-3">Заявка отправлена!</p>
-              <p className="text-white/60 text-sm">
+            <div className="bg-white border border-orange/20 rounded-2xl p-10 text-center">
+              <p className="text-orange font-display text-3xl font-light mb-3">Заявка отправлена!</p>
+              <p className="text-dark/50 text-sm">
                 Василий свяжется с вами в Телеграм, как только откроются продажи.
                 Вы в числе первых и получите доступ по специальной цене.
               </p>
@@ -61,22 +61,22 @@ export function SignupForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Имя *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Имя *</span>
                   <input name="name" type="text" required placeholder="Ваше имя" className={inputClass} />
                 </label>
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Email *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Email *</span>
                   <input name="email" type="email" required placeholder="example@mail.com" className={inputClass} />
                 </label>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Телеграм *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Телеграм *</span>
                   <input name="telegram" type="text" required placeholder="@username" className={inputClass} />
                 </label>
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Уровень *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Уровень *</span>
                   <select name="experience" required className={selectClass}>
                     <option value="">Выберите уровень</option>
                     <option value="Начальный">Начальный</option>
@@ -87,7 +87,7 @@ export function SignupForm() {
               </div>
 
               <label className="block">
-                <span className="text-white/50 text-xs mb-1.5 block">Какой результат хотите получить *</span>
+                <span className="text-dark/50 text-xs mb-1.5 block font-medium">Какой результат хотите получить *</span>
                 <textarea
                   name="goal"
                   required
@@ -98,7 +98,7 @@ export function SignupForm() {
               </label>
 
               <label className="block">
-                <span className="text-white/50 text-xs mb-1.5 block">С какими сложностями сталкиваетесь сейчас *</span>
+                <span className="text-dark/50 text-xs mb-1.5 block font-medium">С какими сложностями сталкиваетесь сейчас *</span>
                 <textarea
                   name="difficulties"
                   required
@@ -110,7 +110,7 @@ export function SignupForm() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Готовность начать *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Готовность начать *</span>
                   <select name="readiness" required className={selectClass}>
                     <option value="">Выберите вариант</option>
                     <option value="Готов начать сразу">Готов начать сразу</option>
@@ -119,13 +119,15 @@ export function SignupForm() {
                   </select>
                 </label>
                 <label className="block">
-                  <span className="text-white/50 text-xs mb-1.5 block">Как давно занимаетесь музыкой *</span>
+                  <span className="text-dark/50 text-xs mb-1.5 block font-medium">Как давно занимаетесь музыкой *</span>
                   <input name="how_long" type="text" required placeholder="Например, 3 года" className={inputClass} />
                 </label>
               </div>
 
               {status === 'error' && (
-                <p className="text-red-400/80 text-sm bg-red-500/10 rounded-xl px-4 py-3">{errorMsg}</p>
+                <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                  {errorMsg}
+                </p>
               )}
 
               <ShimmerButton type="submit" disabled={status === 'loading'}>

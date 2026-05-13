@@ -28,27 +28,27 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-6 bg-dark-2">
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white text-center mb-12">
+          <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-12">
             Частые вопросы
           </h2>
         </FadeIn>
 
-        <div className="divide-y divide-gold/15">
+        <div className="divide-y divide-dark/8">
           {faqs.map((faq, i) => (
             <FadeIn key={i} delay={i * 0.08}>
               <div>
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between py-5 text-left text-white/85 hover:text-white transition-colors font-medium text-[15px] gap-4"
+                  className="w-full flex items-center justify-between py-5 text-left text-dark/80 hover:text-dark transition-colors font-medium text-[15px] gap-4"
                 >
                   {faq.q}
                   <motion.div
                     animate={{ rotate: open === i ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className="text-gold flex-shrink-0"
+                    className="text-orange flex-shrink-0"
                   >
                     <ChevronDown size={18} />
                   </motion.div>
@@ -64,7 +64,7 @@ export function FAQ() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <p className="pb-5 text-white/50 text-sm leading-relaxed">{faq.a}</p>
+                      <p className="pb-5 text-dark/50 text-sm leading-relaxed">{faq.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

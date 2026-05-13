@@ -9,21 +9,21 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section className="py-20 px-6 bg-dark-2">
+    <section className="py-20 px-6 bg-cream-2">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white text-center mb-2">
+          <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-2">
             Отзывы
           </h2>
-          <p className="text-center text-white/40 text-sm mb-12">Реальные отзывы учеников курса</p>
+          <p className="text-center text-dark/40 text-sm mb-12">Реальные отзывы учеников курса</p>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {reviews.map((text, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-dark-3 rounded-2xl p-6 border-l-2 border-gold h-full flex flex-col gap-4">
-                <Quote className="text-gold/30" size={24} strokeWidth={1.5} />
-                <p className="text-white/60 text-sm leading-relaxed italic flex-1">{text}</p>
+              <div className="bg-white rounded-2xl p-6 border-l-2 border-orange h-full flex flex-col gap-4">
+                <Quote className="text-orange/25" size={24} strokeWidth={1.5} />
+                <p className="text-dark/60 text-sm leading-relaxed italic flex-1">{text}</p>
               </div>
             </FadeIn>
           ))}

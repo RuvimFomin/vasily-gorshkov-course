@@ -48,30 +48,33 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section className="py-20 px-6 bg-dark">
+    <section className="py-20 px-6 bg-cream">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white text-center mb-2">
+          <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-2">
             Тарифы
           </h2>
-          <p className="text-center text-white/40 text-sm mb-12">Для каждого тарифа доступна рассрочка</p>
+          <p className="text-center text-dark/40 text-sm mb-12">Для каждого тарифа доступна рассрочка</p>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {plans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
-              <div className="bg-[#f0ebe3] rounded-2xl p-7 h-full flex flex-col">
-                <p className="text-[#333] font-bold text-lg mb-1">{plan.name}</p>
-                <p className="text-[#1a1a1a] font-bold text-3xl mb-4">{plan.price}</p>
+              <div className="bg-white rounded-2xl p-7 h-full flex flex-col border border-dark/8">
+                <p className="text-dark/50 font-medium text-sm mb-1 uppercase tracking-wide">{plan.name}</p>
+                <p className="text-dark font-bold text-3xl mb-4">{plan.price}</p>
                 {plan.featured && (
-                  <p className="text-[#2a1407] text-xs font-semibold bg-black/8 rounded-lg px-3 py-2 mb-4 leading-snug">
+                  <p className="text-orange text-xs font-semibold bg-orange/8 rounded-lg px-3 py-2 mb-4 leading-snug">
                     {plan.featured}
                   </p>
                 )}
                 <ul className="space-y-2 flex-1">
                   {plan.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-[#444] text-[13px] border-b border-black/5 pb-2">
-                      <Check className="text-accent mt-0.5 flex-shrink-0" size={14} strokeWidth={2.5} />
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-dark/65 text-[13px] border-b border-dark/5 pb-2"
+                    >
+                      <Check className="text-olive mt-0.5 flex-shrink-0" size={14} strokeWidth={2.5} />
                       {item}
                     </li>
                   ))}

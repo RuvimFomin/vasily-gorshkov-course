@@ -8,17 +8,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#d2b67e',
-          light: '#e9d9bf',
-          dim: '#b8995f',
+        orange: {
+          DEFAULT: '#E86329',
+          light: '#F0A07A',
+          dark: '#c44e18',
         },
+        olive: '#7A9B3C',
+        cream: {
+          DEFAULT: '#F0F0EE',
+          2: '#E4E4E2',
+          3: '#e8e8e6',
+        },
+        warm: '#C0B4A8',
         dark: {
-          DEFAULT: '#2a1407',
-          2: '#282522',
-          3: '#2e271a',
+          DEFAULT: '#151515',
+          2: '#1e1e1e',
+          3: '#2e2e2e',
         },
-        accent: '#8d7350',
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
@@ -29,14 +35,9 @@ const config: Config = {
           from: { backgroundPosition: '0 0' },
           to: { backgroundPosition: '-200% 0' },
         },
-        'spin-border': {
-          from: { transform: 'rotate(0deg)' },
-          to: { transform: 'rotate(360deg)' },
-        },
       },
       animation: {
         shimmer: 'shimmer 2.5s linear infinite',
-        'spin-border': 'spin-border 3s linear infinite',
       },
     },
   },

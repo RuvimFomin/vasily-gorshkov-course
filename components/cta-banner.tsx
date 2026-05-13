@@ -3,9 +3,10 @@ import { FadeIn } from './ui/fade-in';
 
 export function CtaBanner() {
   return (
-    <div className="py-14 px-6 bg-dark-2 text-center">
+    <div className="py-16 px-6 bg-orange text-center">
       <FadeIn>
-        <ShimmerButton href="#signup" className="mx-auto">
+        <p className="text-white/70 text-sm tracking-widest uppercase mb-5">Ограниченное количество мест</p>
+        <ShimmerButton href="#signup" variant="light" className="mx-auto">
           Забронировать место по ранней цене
         </ShimmerButton>
       </FadeIn>

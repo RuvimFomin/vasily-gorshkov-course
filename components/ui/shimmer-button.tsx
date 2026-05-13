@@ -7,18 +7,37 @@ interface Props {
   className?: string;
   type?: 'button' | 'submit';
   disabled?: boolean;
+  variant?: 'dark' | 'light';
 }
 
-export function ShimmerButton({ href, children, className, type = 'button', disabled, onClick }: Props) {
+export function ShimmerButton({
+  href,
+  children,
+  className,
+  type = 'button',
+  disabled,
+  onClick,
+  variant = 'dark',
+}: Props) {
   const inner = (
     <>
       <span
         className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite]"
         style={{
-          background: 'conic-gradient(from 90deg at 50% 50%, #d2b67e 0%, #2a1407 50%, #d2b67e 100%)',
+          background:
+            variant === 'dark'
+              ? 'conic-gradient(from 90deg at 50% 50%, #E86329 0%, #151515 50%, #E86329 100%)'
+              : 'conic-gradient(from 90deg at 50% 50%, #ffffff 0%, #E86329 50%, #ffffff 100%)',
         }}
       />
-      <span className="relative inline-flex items-center justify-center w-full h-full px-10 py-5 text-[15px] font-semibold tracking-wide text-dark bg-gold rounded-[7px] transition-colors hover:bg-gold-light">
+      <span
+        className={cn(
+          'relative inline-flex items-center justify-center w-full h-full px-10 py-5 text-[15px] font-semibold tracking-wide rounded-[7px] transition-colors',
+          variant === 'dark'
+            ? 'bg-[#E86329] text-white hover:bg-orange-dark'
+            : 'bg-white text-orange hover:bg-cream'
+        )}
+      >
         {children}
       </span>
     </>

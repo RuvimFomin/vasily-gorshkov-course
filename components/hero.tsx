@@ -17,11 +17,17 @@ export function Hero() {
         }}
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-dark/40 to-dark" />
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(21,21,21,0.45) 45%, rgba(21,21,21,0.92) 75%, #151515 100%)',
+        }}
+      />
 
       {/* Magic UI: floating particles */}
-      <Particles count={28} />
+      <Particles count={25} />
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto text-center w-full px-6">
@@ -29,7 +35,7 @@ export function Hero() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center px-4 py-2 rounded-full border border-gold/40 bg-gold/10 text-gold text-sm tracking-widest mb-7 uppercase"
+          className="inline-flex items-center px-4 py-2 rounded-full border border-orange/40 bg-orange/10 text-orange text-sm tracking-widest mb-7 uppercase"
         >
           Предзапись на летний поток
         </motion.div>
@@ -69,9 +75,8 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-orange/50"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
