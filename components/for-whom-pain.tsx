@@ -29,21 +29,20 @@ const pains = [
 export function ForWhomPain() {
   return (
     <>
-      {/* FOR WHOM */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-12">
               Кому подойдет курс?
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {audiences.map((a, i) => (
               <FadeIn key={a.title} delay={i * 0.1}>
-                <div className="bg-cream rounded-2xl p-7 border border-dark/8 hover:border-orange/30 transition-colors h-full">
-                  <a.icon className="text-orange mb-4" size={28} strokeWidth={1.5} />
-                  <h3 className="text-dark font-semibold text-[15px] mb-2">{a.title}</h3>
-                  <p className="text-dark/50 text-sm leading-relaxed">{a.desc}</p>
+                <div className="bg-surface rounded-2xl p-7 border border-accent-light/40 hover:border-accent/40 hover:shadow-sm transition-all h-full">
+                  <a.icon className="text-accent mb-4" size={26} strokeWidth={1.8} />
+                  <h3 className="text-ink font-semibold text-[15px] mb-2 leading-snug">{a.title}</h3>
+                  <p className="text-ink-3 text-sm leading-relaxed">{a.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -51,19 +50,18 @@ export function ForWhomPain() {
         </div>
       </section>
 
-      {/* PAIN */}
-      <section className="py-20 px-6 bg-cream-2">
+      <section className="py-20 px-6 bg-surface-2">
         <div className="max-w-2xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-dark text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-12">
               Узнаёшь себя?
             </h2>
           </FadeIn>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {pains.map((p, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="flex items-start gap-4 bg-white border-l-2 border-orange rounded-r-xl px-5 py-4">
-                  <span className="text-dark/65 text-[15px] leading-relaxed">{p}</span>
+                <div className="flex items-start gap-4 bg-white border-l-[3px] border-accent rounded-r-xl px-5 py-4 shadow-sm">
+                  <span className="text-ink/70 text-[15px] leading-relaxed">{p}</span>
                 </div>
               </FadeIn>
             ))}

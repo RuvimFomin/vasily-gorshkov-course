@@ -8,8 +8,8 @@
   }
 
   body {
-    background-color: #F0F0EE;
-    color: #151515;
+    background-color: #F2F7FC;
+    color: #0F1C2E;
     -webkit-font-smoothing: antialiased;
   }
 }
@@ -18,16 +18,20 @@
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      #E86329 0%,
-      #F0A07A 25%,
-      #E86329 50%,
-      #F0A07A 75%,
-      #E86329 100%
+      #BAD4E9 0%,
+      #ffffff 30%,
+      #BAD4E9 60%,
+      #ffffff 90%,
+      #BAD4E9 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 3s linear infinite;
+    animation: shimmer 3.5s linear infinite;
+  }
+
+  .heading {
+    @apply font-bold tracking-tightest leading-tight;
   }
 }

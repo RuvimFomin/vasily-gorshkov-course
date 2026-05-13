@@ -8,7 +8,6 @@ import { Particles } from './ui/particles';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
-      {/* Full-width background photo */}
       <div
         className="absolute inset-0 bg-cover"
         style={{
@@ -16,26 +15,21 @@ export function Hero() {
           backgroundPosition: 'center 20%',
         }}
       />
-
-      {/* Dark overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(21,21,21,0.45) 45%, rgba(21,21,21,0.92) 75%, #151515 100%)',
+            'linear-gradient(to bottom, rgba(13,27,42,0.1) 0%, rgba(13,27,42,0.5) 45%, rgba(13,27,42,0.93) 75%, #0D1B2A 100%)',
         }}
       />
+      <Particles count={22} />
 
-      {/* Magic UI: floating particles */}
-      <Particles count={25} />
-
-      {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto text-center w-full px-6">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center px-4 py-2 rounded-full border border-orange/40 bg-orange/10 text-orange text-sm tracking-widest mb-7 uppercase"
+          className="inline-flex items-center px-4 py-2 rounded-full border border-accent-light/40 bg-accent-light/10 text-accent-light text-xs font-semibold tracking-widest mb-7 uppercase"
         >
           Предзапись на летний поток
         </motion.div>
@@ -44,11 +38,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="font-display font-light text-white leading-tight mb-6"
-          style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
+          className="font-bold text-white leading-tight mb-6 tracking-tightest"
+          style={{ fontSize: 'clamp(38px, 6vw, 76px)' }}
         >
           Курс по{' '}
-          <em className="not-italic shimmer-text">Аккомпанементу</em>
+          <span className="shimmer-text">Аккомпанементу</span>
           <br />
           Василия Горшкова
         </motion.h1>
@@ -57,7 +51,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.32 }}
-          className="text-white/70 text-lg max-w-lg mx-auto mb-10 font-light"
+          className="text-white/65 text-lg max-w-lg mx-auto mb-10 font-light leading-relaxed"
         >
           За 2 месяца — джазовая гармония, игра по слуху, аранжировка и импровизация.
           Для тех, кто хочет наконец оторваться от нот.
@@ -69,14 +63,14 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.48 }}
           className="inline-block"
         >
-          <ShimmerButton href="#signup">
+          <ShimmerButton href="#signup" variant="primary">
             Забронировать место по ранней цене
           </ShimmerButton>
         </motion.div>
       </div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-orange/50"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent-light/40"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >

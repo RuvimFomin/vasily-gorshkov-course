@@ -8,26 +8,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        orange: {
-          DEFAULT: '#E86329',
-          light: '#F0A07A',
-          dark: '#c44e18',
+        accent: {
+          DEFAULT: '#2B6FA4',
+          hover: '#205585',
+          light: '#BAD4E9',
+          pale: '#E8F2FB',
         },
-        olive: '#7A9B3C',
-        cream: {
-          DEFAULT: '#F0F0EE',
-          2: '#E4E4E2',
-          3: '#e8e8e6',
+        surface: {
+          DEFAULT: '#F2F7FC',
+          2: '#E3EDF8',
+          3: '#BAD4E9',
         },
-        warm: '#C0B4A8',
+        ink: {
+          DEFAULT: '#0F1C2E',
+          2: '#2D4059',
+          3: '#5A7080',
+        },
         dark: {
-          DEFAULT: '#151515',
-          2: '#1e1e1e',
-          3: '#2e2e2e',
+          DEFAULT: '#0D1B2A',
+          2: '#152030',
+          3: '#1E2F42',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
@@ -38,6 +41,10 @@ const config: Config = {
       },
       animation: {
         shimmer: 'shimmer 2.5s linear infinite',
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        tighter: '-0.03em',
       },
     },
   },

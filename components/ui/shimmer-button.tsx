@@ -7,7 +7,7 @@ interface Props {
   className?: string;
   type?: 'button' | 'submit';
   disabled?: boolean;
-  variant?: 'dark' | 'light';
+  variant?: 'primary' | 'light';
 }
 
 export function ShimmerButton({
@@ -17,7 +17,7 @@ export function ShimmerButton({
   type = 'button',
   disabled,
   onClick,
-  variant = 'dark',
+  variant = 'primary',
 }: Props) {
   const inner = (
     <>
@@ -25,17 +25,17 @@ export function ShimmerButton({
         className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite]"
         style={{
           background:
-            variant === 'dark'
-              ? 'conic-gradient(from 90deg at 50% 50%, #E86329 0%, #151515 50%, #E86329 100%)'
-              : 'conic-gradient(from 90deg at 50% 50%, #ffffff 0%, #E86329 50%, #ffffff 100%)',
+            variant === 'primary'
+              ? 'conic-gradient(from 90deg at 50% 50%, #BAD4E9 0%, #0D1B2A 50%, #BAD4E9 100%)'
+              : 'conic-gradient(from 90deg at 50% 50%, #2B6FA4 0%, #ffffff 50%, #2B6FA4 100%)',
         }}
       />
       <span
         className={cn(
           'relative inline-flex items-center justify-center w-full h-full px-10 py-5 text-[15px] font-semibold tracking-wide rounded-[7px] transition-colors',
-          variant === 'dark'
-            ? 'bg-[#E86329] text-white hover:bg-orange-dark'
-            : 'bg-white text-orange hover:bg-cream'
+          variant === 'primary'
+            ? 'bg-accent text-white hover:bg-accent-hover'
+            : 'bg-white text-accent hover:bg-surface'
         )}
       >
         {children}
@@ -43,12 +43,11 @@ export function ShimmerButton({
     </>
   );
 
+  const base = 'relative inline-flex overflow-hidden rounded-lg p-[1.5px]';
+
   if (href) {
     return (
-      <a
-        href={href}
-        className={cn('relative inline-flex overflow-hidden rounded-lg p-[1.5px]', className)}
-      >
+      <a href={href} className={cn(base, className)}>
         {inner}
       </a>
     );
@@ -59,10 +58,7 @@ export function ShimmerButton({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={cn(
-        'relative inline-flex overflow-hidden rounded-lg p-[1.5px] w-full disabled:opacity-60 disabled:cursor-not-allowed',
-        className
-      )}
+      className={cn(base, 'w-full disabled:opacity-60 disabled:cursor-not-allowed', className)}
     >
       {inner}
     </button>

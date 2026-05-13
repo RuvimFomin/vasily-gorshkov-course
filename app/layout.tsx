@@ -1,16 +1,10 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 
-const cormorant = Cormorant_Garamond({
+const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-});
-
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-sans',
 });
 
@@ -22,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="ru" className={manrope.variable}>
       <body className="font-sans">{children}</body>
     </html>
   );

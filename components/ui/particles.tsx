@@ -10,7 +10,7 @@ export function Particles({ count = 20 }: { count?: number }) {
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 2.5 + 1,
+        size: Math.random() * 3 + 1,
         duration: Math.random() * 5 + 4,
         delay: Math.random() * 5,
       })),
@@ -22,15 +22,15 @@ export function Particles({ count = 20 }: { count?: number }) {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-orange"
+          className="absolute rounded-full bg-accent-light"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-            opacity: 0.2,
+            opacity: 0.3,
           }}
-          animate={{ y: [-15, 15, -15], opacity: [0.1, 0.35, 0.1] }}
+          animate={{ y: [-12, 12, -12], opacity: [0.15, 0.4, 0.15] }}
           transition={{
             duration: p.duration,
             delay: p.delay,
