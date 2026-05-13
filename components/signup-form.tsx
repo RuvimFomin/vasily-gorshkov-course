@@ -37,10 +37,10 @@ export function SignupForm() {
   }
 
   return (
-    <section id="signup" className="py-20 px-6 bg-surface-2">
+    <section id="signup" className="py-12 md:py-20 px-6 bg-surface-2">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-2">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-2">
             Записаться на курс
           </h2>
           <p className="text-center text-ink-3 text-sm mb-10 font-medium">

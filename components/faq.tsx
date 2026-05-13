@@ -16,10 +16,10 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-12 md:py-20 px-6 bg-white">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-12">
             Частые вопросы
           </h2>
         </FadeIn>

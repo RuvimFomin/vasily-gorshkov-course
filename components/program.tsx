@@ -19,10 +19,10 @@ const weeks = [
 
 export function Program() {
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-12 md:py-20 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-12">
             Программа курса
           </h2>
         </FadeIn>
@@ -30,7 +30,7 @@ export function Program() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {weeks.map((week, i) => (
             <FadeIn key={week.title} delay={i * 0.07}>
-              <div className="bg-surface rounded-2xl p-6 border-t-[3px] border-accent h-full">
+              <div className="bg-surface rounded-2xl p-6 border-t-[3px] border-accent h-full hover:animate-scaleHover transition-transform duration-300 cursor-pointer">
                 <h4 className="text-accent font-bold text-xs tracking-widest uppercase mb-4">{week.title}</h4>
                 <ul className="space-y-2">
                   {week.items.map((item) => (

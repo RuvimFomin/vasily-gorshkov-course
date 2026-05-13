@@ -48,10 +48,10 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section className="py-20 px-6 bg-surface">
+    <section className="py-12 md:py-20 px-6 bg-surface">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-2">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-2">
             Тарифы
           </h2>
           <p className="text-center text-ink-3 text-sm mb-12 font-medium">Для каждого тарифа доступна рассрочка</p>
@@ -60,11 +60,11 @@ export function Pricing() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-7 h-full flex flex-col border border-accent-light/50 shadow-sm">
+              <div className="bg-white rounded-2xl p-7 h-full flex flex-col border border-accent-light/50 shadow-sm hover:animate-scaleHover transition-transform duration-300 cursor-pointer">
                 <p className="text-ink-3 font-semibold text-xs uppercase tracking-widest mb-1">{plan.name}</p>
                 <p className="text-ink font-extrabold text-3xl mb-4 tracking-tight">{plan.price}</p>
                 {plan.featured && (
-                  <p className="text-accent text-xs font-semibold bg-accent-pale rounded-lg px-3 py-2 mb-4 leading-snug">
+                  <p className="text-gold text-xs font-semibold bg-accent-pale rounded-lg px-3 py-2 mb-4 leading-snug">
                     {plan.featured}
                   </p>
                 )}

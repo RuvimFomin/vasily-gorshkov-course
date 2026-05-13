@@ -12,11 +12,11 @@ const results = [
 
 export function Solution() {
   return (
-    <section className="py-20 px-6 bg-surface">
+    <section className="py-12 md:py-20 px-6 bg-surface">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div
-            className="rounded-2xl p-10 text-white"
+            className="rounded-2xl p-10 text-white hover:animate-scaleHover transition-transform duration-300 cursor-pointer"
             style={{ background: 'linear-gradient(135deg, #2B6FA4 0%, #0D4A78 100%)' }}
           >
             <div className="space-y-5 mb-10">

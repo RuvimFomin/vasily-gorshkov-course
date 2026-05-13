@@ -7,9 +7,9 @@ import { Particles } from './ui/particles';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-end pb-12 md:pb-24 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover"
+        className="absolute inset-0 bg-cover bg-fixed"
         style={{
           backgroundImage: "url('https://taplink.st/p/7/c/c/4/65364030.jpg?1')",
           backgroundPosition: 'center 20%',
@@ -38,7 +38,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="font-bold text-white leading-tight mb-6 tracking-tightest"
+          className="font-serif font-bold text-white leading-tight mb-6 tracking-tightest"
           style={{ fontSize: 'clamp(38px, 6vw, 76px)' }}
         >
           Курс по{' '}

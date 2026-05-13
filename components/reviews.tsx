@@ -9,10 +9,10 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section className="py-20 px-6 bg-surface-2">
+    <section className="py-12 md:py-20 px-6 bg-surface-2">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-2">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-2">
             Отзывы
           </h2>
           <p className="text-center text-ink-3 text-sm mb-12 font-medium">Реальные отзывы учеников курса</p>
@@ -21,7 +21,7 @@ export function Reviews() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {reviews.map((text, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-6 border-l-[3px] border-accent h-full flex flex-col gap-4 shadow-sm">
+              <div className="bg-white rounded-2xl p-6 border-l-[3px] border-accent h-full flex flex-col gap-4 shadow-sm hover:animate-scaleHover transition-transform duration-300 cursor-pointer">
                 <Quote className="text-accent/20" size={22} strokeWidth={1.5} />
                 <p className="text-ink-2 text-sm leading-relaxed italic flex-1">{text}</p>
               </div>

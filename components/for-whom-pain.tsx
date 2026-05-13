@@ -29,17 +29,17 @@ const pains = [
 export function ForWhomPain() {
   return (
     <>
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tighter text-ink text-center mb-12">
               Кому подойдет курс?
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {audiences.map((a, i) => (
               <FadeIn key={a.title} delay={i * 0.1}>
-                <div className="bg-surface rounded-2xl p-7 border border-accent-light/40 hover:border-accent/40 hover:shadow-sm transition-all h-full">
+                <div className="bg-surface rounded-2xl p-7 border border-accent-light/40 hover:border-accent/40 hover:shadow-sm hover:animate-scaleHover transition-all duration-300 h-full cursor-pointer">
                   <a.icon className="text-accent mb-4" size={26} strokeWidth={1.8} />
                   <h3 className="text-ink font-semibold text-[15px] mb-2 leading-snug">{a.title}</h3>
                   <p className="text-ink-3 text-sm leading-relaxed">{a.desc}</p>
